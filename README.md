@@ -31,11 +31,19 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### Run Migrations & Seed Database
+### Generate application key
 ```sh
-php artisan migrate --seed
+php artisan key:generate
 ```
 
+### Run Migrations & Seed Database
+```sh
+php artisan migrate:fresh --seed
+```
+### Run Laravel Passport
+```sh
+php artisan install:api --passport
+```
 ### Start the Server
 ```sh
 php artisan serve
