@@ -1,16 +1,14 @@
-# Project Management API
+# Astudio Laravel Test
 
-## About This API
-The **Project Management API** is a Laravel-based application that enables project creation, attribute management, and dynamic filtering using an Entity-Attribute-Value (EAV) system. This API supports project tracking, flexible attribute assignment, and efficient querying.
-
----
 
 ## 📌 Setup Instructions
 
 ### Clone the Repository
+Repo link https://github.com/abdulrehmandar2234/astudio-laravel-test
+
 ```sh
-git clone https://github.com/your-repo/project-management-api.git
-cd project-management-api
+git clone git@github.com:abdulrehmandar2234/astudio-laravel-test.git
+cd astudio-laravel-test
 ```
 
 ### Install Dependencies
@@ -43,6 +41,10 @@ php artisan migrate --seed
 php artisan serve
 ```
 Your API will be available at `http://127.0.0.1:8000`
+
+Database dump is located at `database/laraveltestapp.sql`
+
+Postman collection is located at `database/astudio.postman_collection.json`
 
 ---
 
@@ -186,6 +188,196 @@ Your API will be available at `http://127.0.0.1:8000`
 ```json
 {
   "message": "User deleted successfully"
+}
+```
+
+---
+
+### **Attribute Endpoints**
+
+#### **Create an Attribute**
+**Endpoint:** `POST /api/attributes`
+
+**Request Body:**
+```json
+{
+  "name": "department",
+  "type": "text"
+}
+```
+
+**Response:**
+```json
+{
+  "data": {
+    "id": 1,
+    "name": "department",
+    "type": "text"
+  }
+}
+```
+
+---
+
+#### **Get All Attributes**
+**Endpoint:** `GET /api/attributes`
+
+**Response:**
+```json
+[
+  {
+    "id": 1,
+    "name": "department",
+    "type": "text"
+  },
+  {
+    "id": 2,
+    "name": "start_date",
+    "type": "date"
+  }
+]
+```
+
+---
+
+#### **Update an Attribute**
+**Endpoint:** `PUT /api/attributes/{id}`
+
+**Request Body:**
+```json
+{
+  "name": "budget",
+  "type": "number"
+}
+```
+
+**Response:**
+```json
+{
+  "data": {
+    "id": 1,
+    "name": "budget",
+    "type": "number"
+  }
+}
+```
+
+---
+
+#### **Delete an Attribute**
+**Endpoint:** `DELETE /api/attributes/{id}`
+
+**Response:**
+```json
+{
+  "message": "Attribute deleted successfully"
+}
+```
+
+---
+### **Timesheet Endpoints**
+
+#### **Create a Timesheet Entry**
+**Endpoint:** `POST /api/timesheets`
+
+**Request Body:**
+```json
+{
+  "user_id": 1,
+  "project_id": 2,
+  "task_name": "Backend Development",
+  "date": "2025-03-04",
+  "hours": 5
+}
+```
+
+**Response:**
+```json
+{
+  "data": {
+    "id": 1,
+    "user_id": 1,
+    "project_id": 2,
+    "task_name": "Backend Development",
+    "date": "2025-03-04",
+    "hours": 5
+  }
+}
+```
+
+---
+
+#### **Get All Timesheets**
+**Endpoint:** `GET /api/timesheets`
+
+**Example Request:**
+- `GET /api/timesheets`
+
+---
+**Response:**
+```json
+{
+    "data": [
+        {
+            "id": 2,
+            "task_name": "Development Task",
+            "date": "2025-02-12",
+            "hours": 7,
+            "user_id": 1,
+            "project_id": 2,
+            "created_at": "2025-03-05T13:58:10.000000Z",
+            "updated_at": "2025-03-05T13:58:10.000000Z",
+            "user": {
+                "id": 1,
+                "first_name": "John",
+                "last_name": "Doe",
+                "email": "admin@example.com",
+                "remember_token": null,
+                "created_at": "2025-03-05T13:58:10.000000Z",
+                "updated_at": "2025-03-05T13:58:10.000000Z"
+            },
+            "project": {
+                "id": 2,
+                "name": "Project B",
+                "status": "Inactive",
+                "created_at": "2025-03-05T13:58:10.000000Z",
+                "updated_at": "2025-03-05T13:58:10.000000Z"
+            }
+        }
+    ]
+}
+```
+#### **Update a Timesheet**
+**Endpoint:** `PUT /api/timesheets/{id}`
+
+**Request Body:**
+```json
+{
+  "task_name": "Frontend Development",
+  "hours": 6
+}
+```
+
+**Response:**
+```json
+{
+  "data": {
+    "id": 1,
+    "task_name": "Frontend Development",
+    "hours": 6
+  }
+}
+```
+
+---
+
+#### **Delete a Timesheet**
+**Endpoint:** `DELETE /api/timesheets/{id}`
+
+**Response:**
+```json
+{
+  "message": "Timesheet deleted successfully"
 }
 ```
 
