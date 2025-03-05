@@ -20,6 +20,7 @@ class UserController extends Controller
     public function store(StoreUserRequest $request): UserResource
     {
         $user = User::create($request->only('first_name', 'last_name', 'email') + ['password' => bcrypt($request->password)]);
+
         return new UserResource($user);
     }
 
@@ -42,6 +43,7 @@ class UserController extends Controller
     public function destroy(User $user): JsonResponse
     {
         $user->delete();
+
         return response()->json(['message' => 'User deleted successfully']);
     }
 }

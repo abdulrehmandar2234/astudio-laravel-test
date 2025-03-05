@@ -22,7 +22,7 @@ class ProjectController extends Controller
 
         foreach ($filters as $key => $filter) {
             // Handle attribute operators (e.g., department|LIKE, start_date|>=)
-            [$field, $operator] = explode('|', $key . '|='); // Default to '=' if no operator provided
+            [$field, $operator] = explode('|', $key.'|='); // Default to '=' if no operator provided
 
             if (in_array($field, ['name', 'status'])) {
                 // Filter by regular project fields
@@ -36,6 +36,7 @@ class ProjectController extends Controller
                 });
             }
         }
+
         return ProjectResource::collection($query->with('attributes.attribute')->get());
     }
 
@@ -69,6 +70,7 @@ class ProjectController extends Controller
     public function destroy(Project $project): JsonResponse
     {
         $project->delete();
+
         return response()->json(['message' => 'Project deleted successfully']);
     }
 

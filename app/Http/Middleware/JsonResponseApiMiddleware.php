@@ -14,7 +14,7 @@ class JsonResponseApiMiddleware
         $response = $next($request);
 
         // If the response is not a JSON response, convert it to JSON
-        if (!$response instanceof \Illuminate\Http\JsonResponse) {
+        if (! $response instanceof \Illuminate\Http\JsonResponse) {
             return response()->json([
                 'message' => $response->getContent(),
             ], $response->status());

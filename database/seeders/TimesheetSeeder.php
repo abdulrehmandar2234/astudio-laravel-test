@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Project;
 use App\Models\Timesheet;
-use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Database\Seeder;
 
 class TimesheetSeeder extends Seeder
 {

@@ -25,6 +25,7 @@ class AttributeController extends Controller
     public function store(StoreAttributeRequest $request): AttributeResource
     {
         $attribute = Attribute::create($request->validated());
+
         return new AttributeResource($attribute);
     }
 
@@ -38,6 +39,7 @@ class AttributeController extends Controller
     public function destroy(Attribute $attribute): JsonResponse
     {
         $attribute->delete();
+
         return response()->json(['message' => 'Attribute deleted']);
     }
 }

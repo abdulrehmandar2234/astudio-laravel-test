@@ -13,13 +13,15 @@ class TimesheetController extends Controller
 {
     public function index(): AnonymousResourceCollection
     {
-        $timesheets =Timesheet::with(['user', 'project'])->get();
+        $timesheets = Timesheet::with(['user', 'project'])->get();
+
         return TimesheetResource::collection($timesheets);
     }
 
     public function store(StoreTimesheetRequest $request): TimesheetResource
     {
         $timesheet = Timesheet::create($request->validated());
+
         return new TimesheetResource($timesheet);
     }
 
@@ -38,6 +40,7 @@ class TimesheetController extends Controller
     public function destroy(Timesheet $timesheet): JsonResponse
     {
         $timesheet->delete();
+
         return response()->json(['message' => 'Timesheet deleted successfully']);
     }
 }

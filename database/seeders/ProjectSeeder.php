@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use App\Models\Project;
 use App\Models\Attribute;
 use App\Models\AttributeValue;
+use App\Models\Project;
+use Illuminate\Database\Seeder;
 
 class ProjectSeeder extends Seeder
 {
@@ -24,8 +24,8 @@ class ProjectSeeder extends Seeder
 
         // Fetch Attributes for later use
         $departmentAttr = Attribute::where('name', 'department')->first();
-        $startDateAttr  = Attribute::where('name', 'start_date')->first();
-        $budgetAttr     = Attribute::where('name', 'budget')->first();
+        $startDateAttr = Attribute::where('name', 'start_date')->first();
+        $budgetAttr = Attribute::where('name', 'budget')->first();
 
         // Seed Projects
         $projects = [
@@ -39,20 +39,20 @@ class ProjectSeeder extends Seeder
             // Assign attribute values
             AttributeValue::create([
                 'attribute_id' => $departmentAttr->id,
-                'entity_id'    => $project->id,
-                'value'        => $project->name === 'Project A' ? 'IT' : 'HR',
+                'entity_id' => $project->id,
+                'value' => $project->name === 'Project A' ? 'IT' : 'HR',
             ]);
 
             AttributeValue::create([
                 'attribute_id' => $startDateAttr->id,
-                'entity_id'    => $project->id,
-                'value'        => $project->name === 'Project A' ? '2025-03-01' : '2025-04-15',
+                'entity_id' => $project->id,
+                'value' => $project->name === 'Project A' ? '2025-03-01' : '2025-04-15',
             ]);
 
             AttributeValue::create([
                 'attribute_id' => $budgetAttr->id,
-                'entity_id'    => $project->id,
-                'value'        => $project->name === 'Project A' ? '50000' : '70000',
+                'entity_id' => $project->id,
+                'value' => $project->name === 'Project A' ? '50000' : '70000',
             ]);
         }
     }

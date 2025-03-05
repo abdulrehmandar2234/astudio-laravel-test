@@ -11,7 +11,7 @@
  Target Server Version : 80402 (8.4.2)
  File Encoding         : 65001
 
- Date: 05/03/2025 17:44:55
+ Date: 05/03/2025 19:34:55
 */
 
 SET NAMES utf8mb4;
@@ -38,12 +38,12 @@ CREATE TABLE `attribute_values`  (
 -- ----------------------------
 -- Records of attribute_values
 -- ----------------------------
-INSERT INTO `attribute_values` VALUES (1, 1, 1, 'IT', '2025-03-04 19:17:50', '2025-03-04 19:17:50');
-INSERT INTO `attribute_values` VALUES (2, 2, 1, '2025-03-01', '2025-03-04 19:17:50', '2025-03-04 19:17:50');
-INSERT INTO `attribute_values` VALUES (3, 3, 1, '50000', '2025-03-04 19:17:50', '2025-03-04 19:17:50');
-INSERT INTO `attribute_values` VALUES (4, 1, 2, 'HR', '2025-03-04 19:17:50', '2025-03-04 19:17:50');
-INSERT INTO `attribute_values` VALUES (5, 2, 2, '2025-04-15', '2025-03-04 19:17:50', '2025-03-04 19:17:50');
-INSERT INTO `attribute_values` VALUES (6, 3, 2, '70000', '2025-03-04 19:17:50', '2025-03-04 19:17:50');
+INSERT INTO `attribute_values` VALUES (1, 1, 1, 'IT', '2025-03-05 14:31:23', '2025-03-05 14:31:23');
+INSERT INTO `attribute_values` VALUES (2, 2, 1, '2025-03-01', '2025-03-05 14:31:23', '2025-03-05 14:31:23');
+INSERT INTO `attribute_values` VALUES (3, 3, 1, '50000', '2025-03-05 14:31:23', '2025-03-05 14:31:23');
+INSERT INTO `attribute_values` VALUES (4, 1, 2, 'HR', '2025-03-05 14:31:23', '2025-03-05 14:31:23');
+INSERT INTO `attribute_values` VALUES (5, 2, 2, '2025-04-15', '2025-03-05 14:31:23', '2025-03-05 14:31:23');
+INSERT INTO `attribute_values` VALUES (6, 3, 2, '70000', '2025-03-05 14:31:23', '2025-03-05 14:31:23');
 
 -- ----------------------------
 -- Table structure for attributes
@@ -61,9 +61,9 @@ CREATE TABLE `attributes`  (
 -- ----------------------------
 -- Records of attributes
 -- ----------------------------
-INSERT INTO `attributes` VALUES (1, 'department', 'text', '2025-03-04 19:17:50', '2025-03-04 19:17:50');
-INSERT INTO `attributes` VALUES (2, 'start_date', 'date', '2025-03-04 19:17:50', '2025-03-04 19:17:50');
-INSERT INTO `attributes` VALUES (3, 'budget', 'number', '2025-03-04 19:17:50', '2025-03-04 19:17:50');
+INSERT INTO `attributes` VALUES (1, 'department', 'text', '2025-03-05 14:31:23', '2025-03-05 14:31:23');
+INSERT INTO `attributes` VALUES (2, 'start_date', 'date', '2025-03-05 14:31:23', '2025-03-05 14:31:23');
+INSERT INTO `attributes` VALUES (3, 'budget', 'number', '2025-03-05 14:31:23', '2025-03-05 14:31:23');
 
 -- ----------------------------
 -- Table structure for cache
@@ -179,11 +179,11 @@ INSERT INTO `migrations` VALUES (5, '2025_03_03_142544_create_timesheets_table',
 INSERT INTO `migrations` VALUES (6, '2025_03_03_142604_create_project_users_table', 1);
 INSERT INTO `migrations` VALUES (7, '2025_03_03_143000_create_attributes_table', 1);
 INSERT INTO `migrations` VALUES (8, '2025_03_03_143011_create_attribute_values_table', 1);
-INSERT INTO `migrations` VALUES (9, '2025_03_04_194008_create_oauth_auth_codes_table', 2);
-INSERT INTO `migrations` VALUES (10, '2025_03_04_194009_create_oauth_access_tokens_table', 2);
-INSERT INTO `migrations` VALUES (11, '2025_03_04_194010_create_oauth_refresh_tokens_table', 2);
-INSERT INTO `migrations` VALUES (12, '2025_03_04_194011_create_oauth_clients_table', 2);
-INSERT INTO `migrations` VALUES (13, '2025_03_04_194012_create_oauth_personal_access_clients_table', 2);
+INSERT INTO `migrations` VALUES (9, '2025_03_05_135837_create_oauth_auth_codes_table', 1);
+INSERT INTO `migrations` VALUES (10, '2025_03_05_135838_create_oauth_access_tokens_table', 1);
+INSERT INTO `migrations` VALUES (11, '2025_03_05_135839_create_oauth_refresh_tokens_table', 1);
+INSERT INTO `migrations` VALUES (12, '2025_03_05_135840_create_oauth_clients_table', 1);
+INSERT INTO `migrations` VALUES (13, '2025_03_05_135841_create_oauth_personal_access_clients_table', 1);
 
 -- ----------------------------
 -- Table structure for oauth_access_tokens
@@ -206,8 +206,6 @@ CREATE TABLE `oauth_access_tokens`  (
 -- ----------------------------
 -- Records of oauth_access_tokens
 -- ----------------------------
-INSERT INTO `oauth_access_tokens` VALUES ('69919047144b16bf4ff855a7babd3f10643551796ebd81ff22e16bc10312d30db40b06730bef55ac', 1, '9e5a8b44-610e-43fa-b6b1-23ecc25f3f83', 'API Token', '[]', 1, '2025-03-04 19:42:37', '2025-03-04 19:45:36', '2026-03-04 19:42:37');
-INSERT INTO `oauth_access_tokens` VALUES ('7b57def4fdc3a1ee51c1a760e0c4ec6eff7eaa49ff61d900d1c977fb20472586956b50682f0f6d94', 1, '9e5a8b44-610e-43fa-b6b1-23ecc25f3f83', 'API Token', '[]', 0, '2025-03-04 19:41:10', '2025-03-04 19:41:10', '2026-03-04 19:41:10');
 
 -- ----------------------------
 -- Table structure for oauth_auth_codes
@@ -251,8 +249,6 @@ CREATE TABLE `oauth_clients`  (
 -- ----------------------------
 -- Records of oauth_clients
 -- ----------------------------
-INSERT INTO `oauth_clients` VALUES ('9e5a8b44-610e-43fa-b6b1-23ecc25f3f83', NULL, 'Laravel Personal Access Client', '9ySY8vDUY9SS4VJdaMdKbtWanaBEaBZp4OiYBgR8', NULL, 'http://localhost', 1, 0, 0, '2025-03-04 19:40:07', '2025-03-04 19:40:07');
-INSERT INTO `oauth_clients` VALUES ('9e5a8b44-66b7-486e-a3c2-135d6e16b9a8', NULL, 'Laravel Password Grant Client', 't0Vdfzv7bKHEiCMU4lJRB1cOceKXZzAk6Rigt0zo', 'users', 'http://localhost', 0, 1, 0, '2025-03-04 19:40:07', '2025-03-04 19:40:07');
 
 -- ----------------------------
 -- Table structure for oauth_personal_access_clients
@@ -264,12 +260,11 @@ CREATE TABLE `oauth_personal_access_clients`  (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of oauth_personal_access_clients
 -- ----------------------------
-INSERT INTO `oauth_personal_access_clients` VALUES (1, '9e5a8b44-610e-43fa-b6b1-23ecc25f3f83', '2025-03-04 19:40:07', '2025-03-04 19:40:07');
 
 -- ----------------------------
 -- Table structure for oauth_refresh_tokens
@@ -340,8 +335,8 @@ CREATE TABLE `projects`  (
 -- ----------------------------
 -- Records of projects
 -- ----------------------------
-INSERT INTO `projects` VALUES (1, 'Project A', 'Active', '2025-03-04 19:17:50', '2025-03-04 19:17:50');
-INSERT INTO `projects` VALUES (2, 'Project B', 'Inactive', '2025-03-04 19:17:50', '2025-03-04 19:17:50');
+INSERT INTO `projects` VALUES (1, 'Project A', 'Active', '2025-03-05 14:31:23', '2025-03-05 14:31:23');
+INSERT INTO `projects` VALUES (2, 'Project B', 'Inactive', '2025-03-05 14:31:23', '2025-03-05 14:31:23');
 
 -- ----------------------------
 -- Table structure for sessions
@@ -381,11 +376,13 @@ CREATE TABLE `timesheets`  (
   INDEX `timesheets_project_id_foreign`(`project_id` ASC) USING BTREE,
   CONSTRAINT `timesheets_project_id_foreign` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `timesheets_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of timesheets
 -- ----------------------------
+INSERT INTO `timesheets` VALUES (1, 'Development Task', '2025-02-09', 3, 1, 1, '2025-03-05 14:31:24', '2025-03-05 14:31:24');
+INSERT INTO `timesheets` VALUES (2, 'Development Task', '2025-02-17', 4, 1, 2, '2025-03-05 14:31:24', '2025-03-05 14:31:24');
 
 -- ----------------------------
 -- Table structure for users
@@ -407,6 +404,6 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'John', 'Doe', 'admin@example.com', '$2y$12$4yBdiWw0mDmnHFJPZRJVEOIT3Pzx9NDgl2u3rOHuTkWVSnofHJVHi', NULL, '2025-03-04 19:17:50', '2025-03-04 19:17:50');
+INSERT INTO `users` VALUES (1, 'John', 'Doe', 'admin@example.com', '$2y$12$h1Iyh0m.dLaWjAQidnh3L.AjNt1zWbvt3MrQAvV25GKs2TiAg86D.', NULL, '2025-03-05 14:31:24', '2025-03-05 14:31:24');
 
 SET FOREIGN_KEY_CHECKS = 1;

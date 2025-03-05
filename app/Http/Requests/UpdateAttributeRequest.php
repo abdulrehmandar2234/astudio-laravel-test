@@ -11,7 +11,7 @@ class UpdateAttributeRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255', Rule::unique('attributes')->ignore($this->route('attribute'))],
-            'type' => ['required','in:text,date,number,select'],
+            'type' => ['required', 'in:text,date,number,select'],
         ];
     }
 }
